@@ -1,0 +1,34 @@
+{
+  "name": "tobs_auth",
+  "version": "1.0.0",
+  "description": "My custom auth middleware",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "node ./dist/index.js",
+    "build": "rollup -c",
+    "dev": "rollup -c --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^24.1.0",
+    "@rollup/plugin-typescript": "^11.1.0",
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.17",
+    "@types/node": "^18.16.3",
+    "prisma": "^4.13.0",
+    "rollup": "^3.21.4",
+    "rollup-plugin-esbuild": "^5.0.0",
+    "rollup-plugin-typescript-paths": "^1.4.0",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "@prisma/client": "4.13.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "zod": "^3.21.4"
+  }
+}
