@@ -2,7 +2,8 @@ import { PrismaClient } from "@prisma/client";
 import logger from "./logger";
 import { Err, Ok } from "./result";
 
-export const prisma = new PrismaClient();
+const prisma = new PrismaClient();
+export default prisma;
 
 export async function dbConn() {
   try {
