@@ -9,8 +9,10 @@ const app = express();
 
 app.use(express.json(), cors());
 
-dbConn().then(() =>
-  app.listen(4000, () => {
-    logger.info("Live ::4000");
-  })
-);
+dbConn().then((res) => {
+  if (res.ok) {
+    app.listen(4000, () => {
+      logger.info("Live ::4000");
+    });
+  }
+});
