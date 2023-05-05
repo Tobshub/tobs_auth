@@ -7,10 +7,16 @@ import logger from "./config/logger";
 import appRouter from "./app/router";
 
 const app = express();
+export default app;
 
 app.use(express.json(), cors());
 
-app.use(appRouter);
+app.use("/api", appRouter);
+
+app.use("/", (_, res) => {
+  res.contentType("text/html");
+  res.send("<h1>Hello world</h1>");
+});
 
 dbConn().then((res) => {
   if (res.ok) {

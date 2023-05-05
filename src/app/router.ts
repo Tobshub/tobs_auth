@@ -46,9 +46,14 @@ appRouter.post("/user", async (req, res) => {
     res.send(Err("An error occured"));
   }
 });
-//
+
 // get user
-//
+appRouter.get("/user", (req, res) => {
+  const { email } = req.query;
+  console.log("email:", email);
+  res.send(Ok(email));
+});
+
 // delete user
 //
 // update user
