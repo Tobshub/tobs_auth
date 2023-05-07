@@ -21,5 +21,8 @@
     "noUnusedParameters": true, /* Raise an error when a function parameter isn't read. */
     "noFallthroughCasesInSwitch": true, /* Enable error reporting for fallthrough cases in switch statements. */
     "skipLibCheck": true /* Skip type checking all .d.ts files. */
-  }
+  },
+  "exclude": [
+    "./**/*.js"
+  ]
 }
