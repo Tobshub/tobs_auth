@@ -24,4 +24,3 @@ dbConn().then((res) => {
   }
 });
 
-export default app;
