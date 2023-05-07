@@ -7,7 +7,6 @@ import logger from "./config/logger";
 import appRouter from "./app/router";
 
 const app = express();
-export default app;
 
 app.use(express.json(), cors());
 app.use("/api", appRouter);
@@ -24,3 +23,5 @@ dbConn().then((res) => {
     });
   }
 });
+
+export default app;
