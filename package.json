@@ -7,7 +7,7 @@
     "start": "TS_NODE_BASEURL=./dist node -r \"tsconfig-paths/register\" ./dist/index.js",
     "build": "tsc && tsc-alias",
     "dev": "nodemon --exec \"ts-node -r tsconfig-paths/register\" ./src/index.ts",
-    "test": "NODE_ENV=\"test\" mocha"
+    "test": "NODE_ENV=\"test\" mocha --exit"
   },
   "keywords": [],
   "author": "",
