@@ -5,13 +5,13 @@ import cors from "cors";
 import { dbConn } from "./config/prisma";
 import logger from "./config/logger";
 import appRouter from "./app/router";
+import { authWare } from "./middlewares";
 
 const app = express();
 export default app;
 
 app.use(express.json(), cors());
-
-app.use("/api", appRouter);
+app.use("/api", authWare, appRouter);
 
 app.use("/", (_, res) => {
   res.contentType("text/html");
