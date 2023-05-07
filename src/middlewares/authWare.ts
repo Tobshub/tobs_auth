@@ -1,5 +1,6 @@
 import appToken from "@/app/token";
 import logger from "@/config/logger";
+import { Err } from "@/config/result";
 import { Request, Response, NextFunction } from "express";
 
 export default async function authWare(
@@ -13,10 +14,14 @@ export default async function authWare(
 
   if (!isValid) {
     logger.warn("Received request with invalid token");
-    res.status(401).send({
-      message: "Invalid Authorization Token",
-      cause: token ? undefined : "Token is missing",
-    });
+    res
+      .status(401)
+      .send(
+        Err(
+          "Invalid Authorization Token",
+          token ? undefined : "Token is missing"
+        )
+      );
     return;
   }
 
