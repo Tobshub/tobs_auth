@@ -36,7 +36,7 @@ export default async function addUser(req: Request, res: Response) {
       return;
     }
 
-    logger.info(user, "Login success");
+    logger.info(user, "User creation success");
     res.status(200).send(Ok(createUser));
   } catch (e) {
     logger.error(e);
