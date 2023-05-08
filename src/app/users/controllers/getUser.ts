@@ -5,5 +5,5 @@ import { Request, Response } from "express";
 export default async function getUser(req: Request, res: Response) {
   const { email } = req.query;
   const id = req.headers.serviceId;
-  res.send(Ok({ email, id }));
+  res.status(200).send(Ok({ email, id }));
 }
