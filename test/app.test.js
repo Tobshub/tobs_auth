@@ -39,7 +39,7 @@ describe("API endpoints testing", () => {
     });
 
     it("should fetch a new token and then try to get a user", async () => {
-      const reqToken = await request(app).get("/api/auth");
+      const reqToken = await request(app).get("/api/token");
 
       expect(reqToken.status).toBe(200);
 
