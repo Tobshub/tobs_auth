@@ -16,6 +16,7 @@ export default async function loginController(req: Request, res: Response) {
   });
 
   if (!user) {
+    logger.warn("Login attempt without user object");
     res.status(400).send(Err("Login Failed", "User object is missing"));
     return;
   }
