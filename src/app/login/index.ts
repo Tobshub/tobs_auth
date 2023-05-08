@@ -7,7 +7,7 @@ import { adminToken } from "../token";
 type User = { email: string; password: string };
 
 export default async function loginController(req: Request, res: Response) {
-  const { rawUser } = await req.body;
+  const { user: rawUser } = await req.body;
   const user = await validateLoginInput(rawUser).then((res) => {
     if (res.ok) {
       return res.value;
