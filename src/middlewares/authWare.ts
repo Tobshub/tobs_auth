@@ -1,4 +1,4 @@
-import appToken from "@/app/token";
+import { appToken } from "@/app/token";
 import logger from "@/config/logger";
 import { Err } from "@/config/result";
 import { Request, Response, NextFunction } from "express";
@@ -9,6 +9,7 @@ export default async function authWare(
   next: NextFunction
 ) {
   const { authorization } = req.headers;
+  // Bearer {Token}
   const token = authorization?.split(" ")[1];
   const { isValid, serviceId } = validateToken(token);
 
