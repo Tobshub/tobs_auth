@@ -3,7 +3,9 @@ import { Err, Ok } from "@/config/result";
 import jwt from "jsonwebtoken";
 import { ObjectId } from "bson";
 
-const appSecret = process.env.JWT_SECRET as string;
+const appSecret = process.env.APP_SECRET as string;
+
+if (!appSecret) logger.warn("app secret is missing");
 
 export const appToken = {
   generate: () => {
@@ -24,6 +26,8 @@ export const appToken = {
 
 const adminSecret = process.env.ADMIN_SECRET as string;
 
+if (!adminSecret) logger.warn("admin secret is missing");
+
 export const adminToken = {
   generate: () => {
     const hex = new ObjectId();
@@ -39,4 +43,4 @@ export const adminToken = {
       return Err("Failed to verify token");
     }
   },
-}
+};
