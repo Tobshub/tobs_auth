@@ -49,8 +49,6 @@ function verfiyUser(user: User) {
   return Err("Email or Password is wrong");
 }
 
-verfiyUser({ email: "", password: "" });
-
 async function validateLoginInput(user: User) {
   try {
     const test = z.object({ email: z.string().email(), password: z.string() });
