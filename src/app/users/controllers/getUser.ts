@@ -3,7 +3,6 @@ import { Request, Response } from "express";
 import prisma from "@/config/prisma";
 import { z } from "zod";
 
-// TODO: finish implementation
 export default async function getUser(req: Request, res: Response) {
   const { email: rawEmail } = req.query;
   const valid = validateEmail(rawEmail as string | undefined);
