@@ -94,12 +94,13 @@ describe("API endpoints testing", () => {
       const res = await request(app)
         .get(`/api/user?email=${email}`)
         .set({ Authorization: `Bearer ${appToken}` })
-        .expect(200);
+        .expect(404);
 
       const body = await res.body;
-      expect(body).toHaveProperty("ok", true);
-      expect(body.value.email).toBeTruthy();
-      expect(body.value.id).toBeTruthy();
+
+      expect(body).toHaveProperty("ok", false);
+      expect(body).toHaveProperty("message", "User not found");
+      expect(body).toHaveProperty("cause", email);
     });
   });
 });
